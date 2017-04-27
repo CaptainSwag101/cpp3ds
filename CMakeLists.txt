@@ -74,9 +74,11 @@ set(CMAKE_SKIP_BUILD_RPATH TRUE)
 set(LIBRARY_OUTPUT_PATH "${PROJECT_BINARY_DIR}/lib")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 
+include_directories(${DEVKITPRO}/portlibs/armv6k/include)
+
 # compile flags
 set(ARCH "-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft")
-set(CPP3DS_ARM_FLAGS "-g -O3 ${ARCH} -ffunction-sections -fdata-sections")
+set(CPP3DS_ARM_FLAGS "-g -O3 ${ARCH} -ffunction-sections -fdata-sections") #-I${DEVKITPRO}/portlibs/armv6k/include")
 set(CPP3DS_TEST_FLAGS "-g -O3 -coverage")
 set(CPP3DS_EMU_FLAGS "-g -O3")
 
